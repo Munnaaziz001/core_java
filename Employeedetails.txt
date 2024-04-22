@@ -1,0 +1,75 @@
+Create a program to calculate the annual salary of an employee by using inheritance. Create a class named "User" with the following properties and methods: Properties: id(int): representing the id of the User name(String):representing the name of the User Constructor: Declare parameterized constructor to initialize id and name. Create a subclass named "Employee" that inherits from the "User" class. Add the following additional properties and methods: Properties: salary(double):representing the monthly salary of the employee Method: double calculateAnnualSalary():to calculate the annual salary earned by the employee. In the main method, create an object of "Employee" class. Calculate the annual salary of the employee and display it.. [Hint:Use constructor or setter methods to set the value]
+
+
+code :-
+
+
+	package Encapsulation;
+
+public  class User {
+    int id;
+    String name;
+    String jobtitle ;
+    public User(int id, String name, String jobtitle) {
+        this.id = id;
+        this.name = name;
+        this.jobtitle = jobtitle;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+ public void setJobtitle(String jobtitle) {
+        this.jobtitle = jobtitle;
+ }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public String getJobtitle() {
+        return jobtitle;
+    }
+
+    public User()
+    {}
+    static class Emple extends User {
+        double salary;
+        public double claPf()
+        {salary  -=300;
+            return salary;
+        }
+        public double calcuAnnualSalary()
+        {
+            salary *= 12;
+            return  salary;
+        }
+
+        public void setSalary(double salary) {
+            this.salary = salary;
+        }
+    }
+
+
+    public static void main(String[] args) {
+        User user = new User(132, "Munna_aziz","software_Engineer");
+        System.out.println(user.getId());
+        System.out.println(user.getName());
+        System.out.println(user.getJobtitle());
+        Emple emple = new Emple();
+        emple.setSalary(25000);
+        System.out.println("Monthly salary:-  $"+emple.salary );
+        System.out.println("After cutting PF:-  $"+emple.claPf());
+        System.out.println("Annual Salary:-  $"+emple.calcuAnnualSalary());
+
+    }
+    }
+
+
